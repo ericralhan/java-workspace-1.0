@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="helloBean" class="com.practice.spring.demo.HelloWorld">
+		<property name="name" value="Mkyong" />
+	</bean>
+	
+	<bean id="helloV2Bean" class="com.practice.spring.demo.HelloWorldV2">
+		<property name="name" value="Mkyong" />
+	</bean>
+	
+	<bean id="byeBean" class="com.practice.spring.demo.ByeWorld">
+		<property name="helloWorld"  ref="helloV2Bean"/>
+	</bean>
+
+</beans>

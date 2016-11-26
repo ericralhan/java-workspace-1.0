@@ -1,0 +1,3 @@
+com\eric\ejbdemo\servlets\AddServlet.class
+com\eric\ejbdemo\beans\AddBean.class
+com\eric\ejbdemo\beans\AddEjb.class

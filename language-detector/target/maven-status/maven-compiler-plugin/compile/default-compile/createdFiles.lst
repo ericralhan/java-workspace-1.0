@@ -1,0 +1,7 @@
+com\eric\language\detector\File.class
+com\eric\language\detector\client\DetectorClient.class
+com\eric\language\detector\util\FileReader.class
+com\eric\language\detector\LanguageDetector.class
+com\eric\language\detector\util\PropertiesReader.class
+com\eric\language\detector\DictionaryBuilder.class
+com\eric\language\detector\exception\UnsupportedFileException.class

@@ -1,0 +1,24 @@
+1478097208442	Rename package 'language'
+1478099735786	Rename compilation unit 'Config.java'
+1478102195149	Rename compilation unit 'FileNotValidException.java'
+1478102742758	Move 'log4j.properties' to 'language-detector'
+1478102999306	Move 'log4j.properties' to 'language-detector'
+1478103054040	Move 'log4j.properties' to 'resources'
+1478103436958	Move 'log4j.properties' to 'java'
+1478103702345	Move 'log4j.properties' to 'resources'
+1478103712807	Rename resource 'log4j.properties'
+1478104158748	Rename resource 'language.properties'
+1478105792946	Delete element
+1478107677291	Copy file
+1478108970281	Rename resource 'log4j.properties'
+1478110033968	Delete element
+1478110392164	Rename type 'Main'
+1478110579768	Rename compilation unit 'Language.java'
+1478110816067	Rename type 'Dictionary'
+1478111064899	Move compilation unit
+1478111142223	Move compilation unit
+1478111194705	Delete elements
+1478111204413	Delete elements
+1478111208385	Delete elements
+1478111300245	Rename resource 'dictionaryfiles'
+1478112052337	Delete element

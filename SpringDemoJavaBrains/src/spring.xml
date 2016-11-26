@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<bean id="triangle" class="com.eric.javabrains.Triangle">
+
+		<!-- Constructor Injection -->
+		<!-- <constructor-arg index="0" value="Equilateral" /> -->
+		<!-- <constructor-arg index="1" value="15" /> -->
+
+		<!-- Setter Injection -->
+		<property name="type" value="Equilateral" />
+		<property name="height" value="15" />
+	</bean>
+
+	<bean id="advTriangle" class="com.eric.javabrains.AdvancedTriangle">
+		<property name="pointA" ref="zeroPoint" />
+		<property name="pointB">
+			<!-- Inner Beans -->
+			<bean class="com.eric.javabrains.Point">
+				<property name="x" value="20" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+		<property name="pointC">
+			<bean class="com.eric.javabrains.Point">
+				<property name="x" value="0" />
+				<property name="y" value="20" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="zeroPoint" class="com.eric.javabrains.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+
+	<!-- Auto-wired in com.eric.javabrains.AdvancedTriangleAutoWired -->
+	<bean id="pointA" class="com.eric.javabrains.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointB" class="com.eric.javabrains.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointC" class="com.eric.javabrains.Point">
+		<property name="x" value="0" />
+		<property name="y" value="20" />
+	</bean>
+
+	<bean id="triangleUsingList" class="com.eric.javabrains.TriangleUsingList">
+		<property name="points">
+			<list>
+				<ref bean="zeroPoint" />
+				<ref bean="pointB" />
+				<ref bean="pointC" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="advTriangleAutoWired" class="com.eric.javabrains.AdvancedTriangleAutoWired"
+		autowire="byName" scope="singleton" />
+
+	<!-- parent class -->
+	<bean id="parentTriangle" class="com.eric.javabrains.AdvancedTriangle">
+		<property name="pointA" ref="pointA"></property>
+	</bean>
+
+	<!-- child class -->
+	<bean id="childTriangle" class="com.eric.javabrains.AdvancedTriangle"
+		parent="parentTriangle">
+		<property name="pointB" ref="pointB" />
+		<!-- <property name="pointC" ref="pointC" /> -->
+	</bean>
+
+</beans>
